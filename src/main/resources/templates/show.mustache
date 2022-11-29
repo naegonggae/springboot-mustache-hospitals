@@ -1,10 +1,25 @@
-<div>
-    <a href="/hospitals/new" class="btn btn-success">New Article</a>
-    <a href="/hospitals" class="btn btn-warning">Article List</a>
-    <a href="/hospitals/{{id}}/edit" class="btn btn-primary">Edit</a>
-    <a href="/hospitals/{{id}}/delete" class="btn btn-danger">Delete</a>
-    이 곳은 show입니다.
-    {{#hospital}}
-        {{id}} {{hospitalName}}
-    {{/hospital}}
-</div>
+{{>layouts/header}}
+<!--<table class="table table-striped">-->
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">이름</th>
+        <th scope="col">도로명 주소</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#hospitals}}
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{hospitalName}}</td>
+            <td>{{roadNameAddress}}</td>
+        </tr>
+    {{/hospitals}}
+    </tbody>
+</table>
+<a href="/hospitals/new" class="btn btn-success">New Article</a>
+<a href="/hospitals" class="btn btn-warning">Hospital List</a>
+<a href="/hospitals/{{id}}/edit" class="btn btn-primary">Edit</a>
+<a href="/hospitals/{{id}}/delete" class="btn btn-danger">Delete</a>
+{{>layouts/footer}}

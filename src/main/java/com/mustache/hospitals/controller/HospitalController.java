@@ -41,7 +41,7 @@ public class HospitalController {
     public String selectById(@PathVariable Integer id, Model model) {
         Optional<Hospital> optHospital = hospitalRepository.findById(id);
         if (!optHospital.isEmpty()) {
-            model.addAttribute("hospital", optHospital.get());
+            model.addAttribute("hospitals", optHospital.get());
             return "show";
         } else {
             return "error";
@@ -63,7 +63,7 @@ public class HospitalController {
     @PostMapping("/{id}/update")
     public String update(@PathVariable Integer id, Model model, HospitalDto hospitalDto) {
         Hospital hospital = hospitalRepository.save(hospitalDto.toEntity());
-        model.addAttribute("hospital", hospital);
+        model.addAttribute("hospitals", hospital);
         return String.format("redirect:/hospitals/%d", hospital.getId());
     }
 
@@ -71,7 +71,7 @@ public class HospitalController {
     public String edit(@PathVariable Integer id, Model model) {
         Optional<Hospital> optionalHospital = hospitalRepository.findById(id);
         if (!optionalHospital.isEmpty()) {
-            model.addAttribute("hospital", optionalHospital.get());
+            model.addAttribute("hospitals", optionalHospital.get());
             return "show";
         } else {
             return "error";
@@ -81,7 +81,7 @@ public class HospitalController {
     @GetMapping("/{id}/delete")
     public String delete(@PathVariable Integer id, Model model) {
         hospitalRepository.deleteById(id);
-        model.addAttribute("hospital", hospitalRepository.findAll());
+        model.addAttribute("hospitals", hospitalRepository.findAll());
         return "list";
     }
 }

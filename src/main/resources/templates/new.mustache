@@ -1,4 +1,14 @@
-<form action="/hospitals" class="container" method="post">
-    <input type="text" name="hospitalName" />
-    <button type="submit">Submit</button>
+{{>layouts/header}}
+<form class="container" action="/hospitals" method="post">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">이름</label>
+        <input type="text" name="hospitalName" class="form-control"
+               id="exampleFormControlInput1" placeholder="병원이름을 입력하세요.">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">도로명 주소</label>
+        <textarea class="form-control" name="roadNameAddress" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+{{>layouts/footer}}
