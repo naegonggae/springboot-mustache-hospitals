@@ -51,7 +51,11 @@ public class HospitalController {
     @GetMapping("")
     public String list(Pageable pageable, Model model) {
         Page<Hospital> hospitals = hospitalRepository.findAll(pageable);
+        log.info("size:{}", hospitals.getSize()); // 로그찍기
         model.addAttribute("hospitals", hospitals);
+        // page 연결시켜주기
+        model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
+        model.addAttribute("next", pageable.next().getPageNumber());
         return "list";
         //http://localhost:8080/hospitals?page=1 로 페이지 검색가능
     }

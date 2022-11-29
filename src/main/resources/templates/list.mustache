@@ -17,5 +17,10 @@
     {{/hospitals}}
     </tbody>
 </table>
+<!--페이징 기능 버튼 구현하기 list 메서드랑 연결-->
+<ul class="pagination justify-content center">
+    <li class="page-item"><a class="page-link" href="?page={{previous}}">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="?page={{next}}">Next</a></li>
+</ul>
 <a href="/hospitals/new" class="btn btn-success">New Article</a>
 {{>layouts/footer}}
