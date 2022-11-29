@@ -1,0 +1,11 @@
+    이 곳은 edit 페이지 입니다.
+    {{#hospital}}
+        <form action="/hospital/{{id}}/update" class="container" method="post">
+            <input type="hidden" name="id" value="{{id}}">
+            <input type="text" name="hospitalName"value="{{hospitalName}}">
+            <button type="submit">Submit</button>
+            <a href="hospital/new">New Hospital</a>
+            <a href="hospital">Hospital List</a>
+            <a href="hospital/{{id}}/delete">Delete</a>
+        </form>
+    {{/hospital}}

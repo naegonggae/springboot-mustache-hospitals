@@ -1,0 +1,10 @@
+<div>
+    <a href="/hospital/new" class="btn btn-success">New Article</a>
+    <a href="/hospital" class="btn btn-warning">Article List</a>
+    <a href="/hospital/{{id}}/edit" class="btn btn-primary">Edit</a>
+    <a href="/hospital/{{id}}/delete" class="btn btn-danger">Delete</a>
+    이 곳은 show입니다.
+    {{#hospital}}
+        {{id}} {{hospitalName}}
+    {{/hospital}}
+</div>
