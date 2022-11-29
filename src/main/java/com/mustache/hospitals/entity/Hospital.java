@@ -17,7 +17,11 @@ import javax.persistence.Table;
 public class Hospital {
     @Id
     private Integer id;
+
     @Column(name = "hospital_name")
     private String hospitalName;
+
     private String roadNameAddress;
+
+    private String businessTypeName;
 }
