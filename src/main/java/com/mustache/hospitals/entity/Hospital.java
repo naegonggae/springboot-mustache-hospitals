@@ -24,4 +24,12 @@ public class Hospital {
     private String roadNameAddress;
 
     private String businessTypeName;
+
+    private Float totalAreaSize;
+
+    private Integer patientRoomCount;
+
+    private Integer totalNumberOfBeds;
+
+    private Integer businessStatusCode;
 }
