@@ -1,7 +1,21 @@
-<div>
-    이 곳은 list입니다.
-    {{#hospital}}
-        <a href="hospital/{{id}}">{{id}}</a> {{hospitalName}}
-    {{/hospital}}
-    <a href="hospital/new">New Hospital</a>
-</div>
+{{>layouts/header}}
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">이름</th>
+        <th scope="col">도로명 주소</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#hospitals}}
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td><a href="/hospitals/{{id}}">{{hospitalName}}</a></td>
+            <td>{{roadNameAddress}}</td>
+        </tr>
+    {{/hospitals}}
+    </tbody>
+</table>
+<a href="/hospitals/new" class="btn btn-success">New Article</a>
+{{>layouts/footer}}
