@@ -15,10 +15,9 @@ public class HospitalDto {
     private Float totalAreaSize;
     private Integer patientRoomCount;
     private Integer totalNumberOfBeds;
-    private Integer businessStatusCode;
 
     public Hospital toEntity() {
-        return new Hospital(this.id, this.hospitalName, this.roadNameAddress, this.businessTypeName,
-                this.totalAreaSize, this.patientRoomCount, this.totalNumberOfBeds, this.businessStatusCode);
+        return new Hospital(this.id, this.roadNameAddress, this.hospitalName, this.patientRoomCount,
+                this.totalNumberOfBeds, this.businessTypeName, this.totalAreaSize); //순서 왜 중요하지...?
     }
 }
