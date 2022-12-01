@@ -42,3 +42,6 @@ order by patient_room_count desc;
 SELECT hospital_name, patient_room_count FROM `likelion-db`.nation_wide_hospitals
 where patient_room_count between 10 and 19
 order by patient_room_count desc;
+
+--business_status_code 에서 중복제거 후 출력--
+SELECT distinct business_status_code FROM `likelion-db`.nation_wide_hospitals;

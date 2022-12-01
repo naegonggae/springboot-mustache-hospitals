@@ -17,6 +17,24 @@ public class HospitalResponse {
     private Integer totalNumberOfBeds;
     private String businessTypeName;
     private Float totalAreaSize;
+
+    private String businessStatusName; // 이거 새로 추가
+
+    // businessStatusName뺘고 생성자 하나 만들어줘
+    public HospitalResponse(Integer id, String roadNameAddress, String hospitalName, Integer patientRoomCount,
+                            Integer totalNumberOfBeds, String businessTypeName, Float totalAreaSize) {
+        this.id = id;
+        this.roadNameAddress = roadNameAddress;
+        this.hospitalName = hospitalName;
+        this.patientRoomCount = patientRoomCount;
+        this.totalNumberOfBeds = totalNumberOfBeds;
+        this.businessTypeName = businessTypeName;
+        this.totalAreaSize = totalAreaSize;
+    }
+
+    public void setBusinessStatusName(String businessStatusName) { // setter 만들어주기
+        this.businessStatusName = businessStatusName;
+    }
 }
 
 

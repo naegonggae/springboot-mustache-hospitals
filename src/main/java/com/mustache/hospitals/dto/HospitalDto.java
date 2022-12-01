@@ -16,6 +16,7 @@ public class HospitalDto {
     private Integer patientRoomCount;
     private Integer totalNumberOfBeds;
 
+    private String businessStatusCode;
     public Hospital toEntity() {
         return new Hospital(this.id, this.roadNameAddress, this.hospitalName, this.patientRoomCount,
                 this.totalNumberOfBeds, this.businessTypeName, this.totalAreaSize); //순서 왜 중요하지...?
