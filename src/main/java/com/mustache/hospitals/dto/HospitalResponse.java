@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 // 얘는 dto야
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
