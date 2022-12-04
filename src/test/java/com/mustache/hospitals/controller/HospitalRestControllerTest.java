@@ -57,6 +57,4 @@ class HospitalRestControllerTest {
 
         verify(hospitalService).getHospital(hospitalId);// getHospital()메소드의 호출이 있었는지 확인
     }
-
-
 }

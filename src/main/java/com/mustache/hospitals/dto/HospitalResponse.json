@@ -1,7 +1,7 @@
-// 1번
+# 1번
 {"id":"", "roadNameAddress":"", "hospitalName":"", "patientRoomCount":"", "totalNumberOfBeds":"", "businessTypeName":"", "totalAreaSize":""}
 
-// 2번
+# 2번
 [
   {"id":1,"name":"서울"},{"id":2,"name":"부산"},{"id":3,"name":"대구"},
   {"id":4,"name":"인천"},{"id":5,"name":"광주"},{"id":6,"name":"대전"},
@@ -10,4 +10,4 @@
   {"id":13,"name":"전북"},{"id":14,"name":"전남"},{"id":15,"name":"경북"},
   {"id":16,"name":"경남"},{"id":17,"name":"제주"}
 ]
-// 1번과 2번은 같은 공간에 있을 수 없나봐... 주석도 못적나봐...
+# 1번과 2번은 같은 공간에 있을 수 없나봐... 주석도 못적나봐...

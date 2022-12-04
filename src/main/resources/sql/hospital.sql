@@ -45,3 +45,15 @@ order by patient_room_count desc;
 
 --business_status_code 에서 중복제거 후 출력--
 SELECT distinct business_status_code FROM `likelion-db`.nation_wide_hospitals;
+
+business_status_code
+# business_status_code 전체 조회
+select distinct business_status_code from nation_wide_hospitals;
+
+# business_status_code 가 13인 레코드 조회
+select * from nation_wide_hospitals
+where business_status_code = 13;
+
+# business_status_code 가 3인 레코드 조회
+select * from nation_wide_hospitals
+where business_status_code = 3;
