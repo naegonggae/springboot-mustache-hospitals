@@ -50,6 +50,7 @@ public class HospitalController {
 
     @GetMapping("")
     public String list(Pageable pageable, Model model) {
+        /*
         Page<Hospital> hospitals = hospitalRepository.findAll(pageable);
         log.info("size:{}", hospitals.getSize()); // 로그찍기
         model.addAttribute("hospitals", hospitals);
@@ -58,6 +59,17 @@ public class HospitalController {
         model.addAttribute("next", pageable.next().getPageNumber());
         return "list";
         //http://localhost:8080/hospitals?page=1 로 페이지 검색가능
+
+         */
+        // Parameter로 받아야 하지만 keyword변수를 경기도 수원시로 지정하는 hard coding으로 findByRoadNameAddressContaining가 잘 작동 하는지 확인
+        // keyword는 어떻게 받을 것인가?
+        String keyword = "경기도 수원시";
+        Page<Hospital> pageHospitals = hospitalRepository.findByRoadNameAddressContaining(keyword, pageable);
+        model.addAttribute("hospitals", pageHospitals);
+        // page 연결시켜주기
+        model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
+        model.addAttribute("next", pageable.next().getPageNumber());
+        return "list";
     }
 
     @PostMapping("/{id}/update")

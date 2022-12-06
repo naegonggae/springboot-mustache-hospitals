@@ -41,8 +41,8 @@ class HospitalRepositoryTest {
 
     @Test
     void containing() {
-        List<Hospital> hospitals = hospitalRepository.findByRoadNameAddressContaining("송파구");
-        printHospitalNameAndAddress(hospitals);
+        //List<Hospital> hospitals = hospitalRepository.findByRoadNameAddressContaining("송파구");
+        //printHospitalNameAndAddress(hospitals);
     }
 
     @Test

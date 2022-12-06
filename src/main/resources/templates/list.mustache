@@ -1,4 +1,8 @@
 {{>layouts/header}}
+<form action="/hospitals" method="get"><!--메소드가 get이면 주소창뒤에 ?keyword=<> 로 넘어감-->
+    지역: <input type="text" name="keyword" />
+    <input type="submit" />
+</form>
 <table class="table table-striped table-hover">
     <thead>
     <tr>
