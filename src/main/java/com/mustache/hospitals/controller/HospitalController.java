@@ -8,10 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -49,7 +46,7 @@ public class HospitalController {
     }
 
     @GetMapping("")
-    public String list(Pageable pageable, Model model) {
+    public String list(@RequestParam(required = false) String keyword, Pageable pageable, Model model) { // required = false 넣어주면 전체 조회 리스트
         /*
         Page<Hospital> hospitals = hospitalRepository.findAll(pageable);
         log.info("size:{}", hospitals.getSize()); // 로그찍기
@@ -63,9 +60,10 @@ public class HospitalController {
          */
         // Parameter로 받아야 하지만 keyword변수를 경기도 수원시로 지정하는 hard coding으로 findByRoadNameAddressContaining가 잘 작동 하는지 확인
         // keyword는 어떻게 받을 것인가?
-        String keyword = "경기도 수원시";
-        Page<Hospital> pageHospitals = hospitalRepository.findByRoadNameAddressContaining(keyword, pageable);
-        model.addAttribute("hospitals", pageHospitals);
+        log.info("keyword:{}", keyword);
+        Page<Hospital> hospitalsP = hospitalRepository.findByRoadNameAddressContaining(keyword, pageable);
+        model.addAttribute("hospitals", hospitalsP);
+        model.addAttribute("keyword", keyword); // 나는 왜 오류안나...?
         // page 연결시켜주기
         model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
         model.addAttribute("next", pageable.next().getPageNumber());

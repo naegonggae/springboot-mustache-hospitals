@@ -1,6 +1,11 @@
 {{>layouts/header}}
 <form action="/hospitals" method="get"><!--메소드가 get이면 주소창뒤에 ?keyword=<> 로 넘어감-->
-    지역: <input type="text" name="keyword" />
+    {{#keyword}}
+        지역: <input type="text" name="keyword" value="{{keyword}}"/>
+    {{/keyword}}
+    {{^keyword}}
+        지역: <input type="text" name="keyword" />
+    {{/keyword}}
     <input type="submit" />
 </form>
 <table class="table table-striped table-hover">
@@ -23,8 +28,14 @@
 </table>
 <!--페이징 기능 버튼 구현하기 list 메서드랑 연결-->
 <ul class="pagination justify-content-center">
-    <li class="page-item"><a class="page-link" href="?page={{previous}}">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="?page={{next}}">Next</a></li>
+    {{#keyword}}
+        <li class="page-item"><a class="page-link" href="?page={{previous}}&keyword={{keyword}}">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{next}}&keyword={{keyword}}">Next</a></li>
+    {{/keyword}}
+    {{^keyword}}
+        <li class="page-item"><a class="page-link" href="?page={{previous}}">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{next}}">Next</a></li>
+    {{/keyword}}
 </ul>
 <a href="/hospitals/new" class="btn btn-success">New Article</a>
 {{>layouts/footer}}
